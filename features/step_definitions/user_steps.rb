@@ -12,8 +12,13 @@ Given /^I am signed in as them$/ do
    Given I am on the homepage
    When I follow "Sign in"
    And I fill in "Email" with "#{@user.email}"
-   And I fill in "Password" with "#{@user.password}"
+   And I fill in "Password" with "password"
    And I press "Sign in"
    Then I should see "Signed in successfully."
   })
+end
+
+Given /^I am signed in as "([^"]*)"$/ do |email|
+  @user = User.find_by_email!(email)
+  steps("Given I am signed in as them")
 end
