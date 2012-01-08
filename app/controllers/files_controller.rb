@@ -4,14 +4,14 @@ class FilesController < ApplicationController
   def new
     @ticket = Ticket.new
     asset = @ticket.assets.build
-    render :partial =>"files/form",
-           :locals => { :number => params[:number].to_i, :asset => asset }
+    render :partial => "files/form",
+           :locals => { :number => params[:number].to_i }
   end
 
 
   def show
     asset = Asset.find(params[:id])
-    if can?(:view, asset.ticket.project)
+    if current_user.admin? || can?(:view, asset.ticket.project)
       send_file asset.asset.path, :filename     => asset.asset_file_name,
                                   :content_type => asset.asset_content_type
     else
