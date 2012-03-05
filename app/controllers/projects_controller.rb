@@ -25,6 +25,7 @@ before_filter :find_project, :only => [:show,
   end
 
   def show
+    @tickets = @project.tickets
   end
 
   def edit
