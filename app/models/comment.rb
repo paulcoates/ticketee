@@ -11,6 +11,7 @@ class Comment < ActiveRecord::Base
 
   delegate :project, :to => :ticket
 
+  after_create :creator_watches_ticket
   private
 
     def set_previous_state
@@ -20,5 +21,9 @@ class Comment < ActiveRecord::Base
     def set_ticket_state
       self.ticket.state = self.state
       self.ticket.save!
+    end
+
+    def creator_watches_ticket
+      ticket.watchers << user
     end
 end
