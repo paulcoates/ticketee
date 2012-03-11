@@ -1,0 +1,7 @@
+ActionMailer::Base.smtp_settings = {
+  :user_name => "testing@paulcoates.com",
+  :password => "redacted",
+  :address  => "smtp.gmail.com",
+  :port => 587,
+  :tls => true
+}
