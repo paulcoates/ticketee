@@ -9,6 +9,7 @@ ActiveSupport.on_load(:action_controller) do
 end
 
 # Disable root element in JSON by default.
+# Re-enabled to support chapter 13.1.2
 ActiveSupport.on_load(:active_record) do
-  self.include_root_in_json = false
+  self.include_root_in_json = true
 end
