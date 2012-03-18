@@ -7,6 +7,12 @@ namespace :api do
   end
 end
 
+namespace :api do
+  namespace :v2 do
+    resources :projects
+  end
+end
+
   devise_for :users, :controllers => { :registrations => "registrations" }
 
   root :to => "projects#index"
