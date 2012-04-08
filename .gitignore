@@ -17,4 +17,5 @@ public/system
 files
 
 config/initializers/mail.rb
+config/initializers/devise.rb
 features/gmail.feature
