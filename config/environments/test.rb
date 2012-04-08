@@ -40,5 +40,6 @@ Ticketee::Application.configure do
   # Required by devise generate
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
-
+  #Turn test mode on for OmniAuth
+  OmniAuth.config.test_mode = true
 end
