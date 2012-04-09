@@ -200,6 +200,10 @@ Devise.setup do |config|
   config.omniauth :twitter,
     '[your consumer key]',
     '[your consumer secret]'
+
+  config.omniauth :github,
+    '[client id]',
+    '[client secret]'
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.
