@@ -19,6 +19,8 @@ class User < ActiveRecord::Base
       data = response['extra']['user_hash']
       if user = User.find_by_github_id(data["id"])
         user
+      elsif user = User.find_by_email(data["email"])
+        user
       else # create a user with a stub password.
         user = User.new(:email => data["email"],
                         :password => Devise.friendly_token[0,20])
