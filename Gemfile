@@ -49,5 +49,6 @@ gem 'cancan'
 
 gem 'paperclip'
 gem 'searcher'
+gem 'kaminari'
 
 gem 'oa-oauth', :require => "omniauth/oauth"
