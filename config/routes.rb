@@ -5,11 +5,11 @@ namespace :api do
       resources :tickets
     end
   end
-end
 
-namespace :api do
   namespace :v2 do
-    resources :projects
+    resources :projects do
+      resources :tickets
+    end
   end
 end
 
